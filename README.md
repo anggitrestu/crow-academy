@@ -1,4 +1,4 @@
-# crow-academy
+# crowd-academy
 
 # Getting Started with Create React App
 
