@@ -1,21 +1,21 @@
-import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import useStyles from "./useStylesRegsiter";
-import Container from "@material-ui/core/Container";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Link from "@material-ui/core/Link";
+import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import useStyles from './useStylesRegsiter';
+import Container from '@material-ui/core/Container';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Link from '@material-ui/core/Link';
 
 const RegisterPage = () => {
   const classes = useStyles();
 
-  const [registeras, setregisteras] = React.useState("");
+  const [registeras, setregisteras] = React.useState('');
 
   const handleChangeRegister = (event) => {
     setregisteras(event.target.value);
@@ -59,7 +59,7 @@ const RegisterPage = () => {
             required
             fullWidth
             name="password2"
-            label="Password"
+            label="Confirm Password"
             type="password"
             id="password2"
             autoComplete="current-password"
