@@ -59,7 +59,7 @@ const RegisterPage = () => {
             required
             fullWidth
             name="password2"
-            label="Password"
+            label="Confirm Password"
             type="password"
             id="password2"
             autoComplete="current-password"
@@ -75,7 +75,7 @@ const RegisterPage = () => {
               onChange={handleChangeRegister}
             >
               Register As
-              <MenuItem value="" />
+              <MenuItem value="#"> </MenuItem>
               <MenuItem value="tutor">Tutor</MenuItem>
               <MenuItem value="leaner">Leaner</MenuItem>
             </Select>
