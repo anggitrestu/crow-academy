@@ -1,8 +1,8 @@
-import React from "react";
-import LoginPage from "./LandingPage/LoginPage";
-import Register from "./Register/RegisterPage";
-import "./index.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import LoginPage from './LandingPage/LoginPage';
+import Register from './Register/RegisterPage';
+import './index.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
