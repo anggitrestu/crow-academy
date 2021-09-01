@@ -18,10 +18,7 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Charts';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import { mainListItems } from './listItems';
 
 function Copyright() {
   return (
@@ -179,28 +176,40 @@ export default function Dashboard() {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol className="breadcrumb title-beranda">
+                <li className="breadcrumb-item active">
+                  <a href="#">Artikel</a>
+                </li>
+                <li className="breadcrumb-item " aria-current="page">
+                  Kelas Pelatihan
+                </li>
+              </ol>
+            </nav>
+          </div>
           <Grid container spacing={3}>
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
+            <Grid item xs={12} md={12} lg={12}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <div>
+                  <h3>Kategori : IT & DATA</h3>
+                  <h3>Judul : Intro To Machine Learning</h3>
+                  <h3>Posting Date : 17 Juli 2021</h3>
+                  <h3>Isi Artikel : Di era industri 4.0 ini ....</h3>
+                </div>
               </Paper>
             </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid>
+
             {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                {/* <Orders /> */}
+                <h3>Data 2 Artikel</h3>
               </Paper>
             </Grid>
           </Grid>
