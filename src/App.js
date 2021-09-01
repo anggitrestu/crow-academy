@@ -11,7 +11,7 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <Route path="/login">
+        <Route>
           <LoginPage />
         </Route>
       </Switch>
