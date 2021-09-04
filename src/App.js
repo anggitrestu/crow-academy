@@ -6,7 +6,7 @@ import Dashboard from './Page/Beranda/Dahsboard';
 import './index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import 'assets/scss/style.scss';
+// import 'assets/scss/style.scss';
 
 function App() {
   return (

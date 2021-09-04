@@ -13,12 +13,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import Breadcrumb from 'Parts/Breadcrumb';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems } from './listItems';
+import Article from 'Parts/Article';
 
 function Copyright() {
   return (
@@ -123,7 +124,6 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
@@ -180,37 +180,14 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <div>
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb title-beranda">
-                <li className="breadcrumb-item active">
-                  <a href="#">Artikel</a>
-                </li>
-                <li className="breadcrumb-item " aria-current="page">
-                  Kelas Pelatihan
-                </li>
-              </ol>
-            </nav>
-          </div>
-          <Grid container spacing={3}>
+          <Breadcrumb></Breadcrumb>
+          <Grid container spacing={3} style={{ marginTop: 20 }}>
             {/* Chart */}
             <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper}>
-                <div>
-                  <h3>Kategori : IT & DATA</h3>
-                  <h3>Judul : Intro To Machine Learning</h3>
-                  <h3>Posting Date : 17 Juli 2021</h3>
-                  <h3>Isi Artikel : Di era industri 4.0 ini ....</h3>
-                </div>
-              </Paper>
+              <Article></Article>
             </Grid>
-
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                {/* <Orders /> */}
-                <h3>Data 2 Artikel</h3>
-              </Paper>
+            <Grid item xs={12} md={12} lg={12}>
+              <Article></Article>
             </Grid>
           </Grid>
           <Box pt={4}>
