@@ -182,13 +182,7 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Breadcrumb></Breadcrumb>
           <Grid container spacing={3} style={{ marginTop: 20 }}>
-            {/* Chart */}
-            <Grid item xs={12} md={12} lg={12}>
-              <Article></Article>
-            </Grid>
-            <Grid item xs={12} md={12} lg={12}>
-              <Article></Article>
-            </Grid>
+            <Article></Article>
           </Grid>
           <Box pt={4}>
             <Copyright />

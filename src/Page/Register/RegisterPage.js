@@ -1,25 +1,24 @@
-import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import { FormHelperText } from "@material-ui/core";
-import useStyles from "./useStylesRegsiter";
-import Container from "@material-ui/core/Container";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import { Link } from "react-router-dom";
-import useFromRegister from "./useFormRegister";
-import validate from "./validateinfo";
+import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import { FormHelperText } from '@material-ui/core';
+import useStyles from './useStylesRegsiter';
+import Container from '@material-ui/core/Container';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { Link } from 'react-router-dom';
+import useFromRegister from './useFormRegister';
+import validate from './validateinfo';
 
 const RegisterPage = () => {
   const classes = useStyles();
-  const { handleChange, values, handleSubmit, errors } = useFromRegister(
-    validate
-  );
+  const { handleChange, values, handleSubmit, errors } =
+    useFromRegister(validate);
 
   return (
     <Container component="main" maxWidth="xs">
