@@ -13,12 +13,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Breadcrumb from 'Parts/Breadcrumb';
+import Breadcrumb from 'assets/elements/Breadcumb/Breadcrumb';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
+import { mainListItem } from './mainListItem';
 import Article from 'Parts/Article';
 
 function Copyright() {
@@ -33,6 +33,11 @@ function Copyright() {
     </Typography>
   );
 }
+
+const breadcrumb = [
+  { pageTitle: 'Artikel', pageHref: '' },
+  { pageTitle: 'Kelas', pageHref: '' },
+];
 
 const drawerWidth = 240;
 
@@ -73,6 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    textAlign: 'center',
   },
   drawerPaper: {
     position: 'relative',
@@ -152,7 +158,7 @@ export default function Dashboard() {
             noWrap
             className={classes.title}
           >
-            Dashboard
+            Dashboard Tutor
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -174,13 +180,13 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>{mainListItem}</List>
         <Divider />
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          <Breadcrumb></Breadcrumb>
+          <Breadcrumb data={breadcrumb}></Breadcrumb>
           <Grid container spacing={3} style={{ marginTop: 20 }}>
             <Article></Article>
           </Grid>

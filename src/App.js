@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginPage from './Page/LandingPage/LoginPage';
-import Register from './Page/Register/RegisterPage';
+import LoginPage from './Page/LoginPage';
+import RegisterPage from './Page/Register/index.js';
+import TutorPage from './Page/Tutor';
 import Header from './Parts/Header';
-import Dashboard from './Page/Beranda/Dahsboard';
 import './index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -12,18 +12,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
-          <LoginPage />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/header">
-          <Header />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
+        <Route path="/register" component={RegisterPage}></Route>
+        <Route path="/login" component={LoginPage}></Route>
+        <Route path="/tutor" component={TutorPage}></Route>
+        <Route path="/" component={Header}></Route>
       </Switch>
     </Router>
   );

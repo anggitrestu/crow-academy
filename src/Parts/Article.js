@@ -12,7 +12,6 @@ import { Grid } from '@material-ui/core';
 const useStyles = makeStyles({
   table: {
     minWidth: 500,
-    // borderBottom: 'none',
     borderStyle: 'none',
   },
 });
