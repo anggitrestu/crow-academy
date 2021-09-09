@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
-import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
@@ -11,33 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Breadcrumb from 'assets/elements/Breadcumb/Breadcrumb';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItem } from './mainListItem';
-import Article from 'Parts/Article';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const breadcrumb = [
-  { pageTitle: 'Artikel', pageHref: '' },
-  { pageTitle: 'Kelas', pageHref: '' },
-];
+import MainListItem from './MainListItem';
 
 const drawerWidth = 240;
 
@@ -121,8 +97,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
-  const classes = useStyles();
+const SidebarDashboard = (props) => {
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -130,10 +105,14 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const classes = useStyles();
+
+  const ListItem = props.ListItem;
 
   return (
-    <div className={classes.root}>
+    <>
       <CssBaseline />
+      <div className={classes.appBarSpacer} />
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
@@ -180,21 +159,13 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItem}</List>
+        <List>
+          <MainListItem data={ListItem}></MainListItem>
+        </List>
         <Divider />
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Breadcrumb data={breadcrumb}></Breadcrumb>
-          <Grid container spacing={3} style={{ marginTop: 20 }}>
-            <Article></Article>
-          </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
-        </Container>
-      </main>
-    </div>
+    </>
   );
-}
+};
+
+export default SidebarDashboard;
