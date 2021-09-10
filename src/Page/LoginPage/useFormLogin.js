@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 
 const useFormLogin = (validate) => {
   const [values, setValues] = useState({
-    email: "",
-    password: "",
-    loginas: "",
+    email: '',
+    password: '',
+    loginas: '',
   });
 
   const [errors, setErrors] = useState({});

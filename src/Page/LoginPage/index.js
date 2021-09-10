@@ -1,19 +1,19 @@
-import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import { Link } from "react-router-dom";
-import useStyles from "./useStyleSignin";
-import validate from "../Register/validateinfo";
-import useFromLogin from "./useFormLogin";
-import { FormHelperText } from "@material-ui/core";
+import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { Link } from 'react-router-dom';
+import useStyles from './useStyleSignin';
+import validate from '../Register/validateinfo';
+import useFromLogin from './useFormLogin';
+import { FormHelperText } from '@material-ui/core';
 
 export default function SignIn() {
   const classes = useStyles();
@@ -99,7 +99,7 @@ export default function SignIn() {
 
           <Grid container>
             <Grid item>
-              <Link to="/Register">{"Don't have an account? Sign Up"}</Link>
+              <Link to="/register">{"Don't have an account? Sign Up"}</Link>
             </Grid>
           </Grid>
         </form>

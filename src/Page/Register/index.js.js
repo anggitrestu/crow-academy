@@ -115,9 +115,7 @@ const RegisterPage = () => {
 
           <Grid container>
             <Grid item>
-              <Link to="../LoginPage/LoginPage">
-                Already have an account? Sign In"
-              </Link>
+              <Link to="/login">Already have an account? Sign In"</Link>
             </Grid>
           </Grid>
         </form>

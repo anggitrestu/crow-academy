@@ -31,7 +31,7 @@ const rows = [
   ),
 ];
 
-export default function Article() {
+export default function Kelas() {
   const classes = useStyles();
 
   return (

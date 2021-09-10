@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Breadcrumb from 'assets/elements/Breadcumb/Breadcrumb';
-import Article from 'Parts/Article';
+import Article from 'Page/Tutor/Article';
 import Copyright from 'Parts/Copyright';
 import SidebarDashboard from 'Parts/Dashboard/SidebarDashboard';
+import { useLocation } from 'react-router-dom';
+import Kelas from './Kelas';
 
 const breadcrumb = [
-  { pageTitle: 'Artikel', pageHref: '' },
-  { pageTitle: 'Kelas', pageHref: '' },
+  { pageTitle: `Artikel`, pageHref: `/tutor/beranda-artikel` },
+  { pageTitle: `Kelas`, pageHref: `/tutor/beranda-kelas` },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
+  breadcrumb: {
+    marginTop: '20px',
+  },
 }));
 
 const ListItem = [
@@ -38,16 +44,27 @@ const ListItem = [
   { pageTitle: 'Sign Out', pageHref: '', icon: '' },
 ];
 
-export default function Dashboard() {
+export default function Tutor() {
+  let location = useLocation();
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <SidebarDashboard ListItem={ListItem}></SidebarDashboard>
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
-          <Breadcrumb data={breadcrumb}></Breadcrumb>
+          <br />
+          <br />
+          <br />
+          <Breadcrumb
+            data={breadcrumb}
+            className={classes.breadcrumb}
+          ></Breadcrumb>
           <Grid container spacing={3} style={{ marginTop: 20 }}>
-            <Article></Article>
+            {location.pathname === `/tutor/beranda-artikel` ? (
+              <Article></Article>
+            ) : (
+              <Kelas></Kelas>
+            )}
           </Grid>
           <Box pt={4}>
             <Copyright />
