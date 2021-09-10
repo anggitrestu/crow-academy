@@ -9,13 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Grid } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 500,
-    borderStyle: 'none',
-  },
-});
-
 function createData(name, data) {
   return { name, data };
 }
@@ -30,6 +23,21 @@ const rows = [
   ),
 ];
 
+const useStyles = makeStyles({
+  table: {
+    minWidth: 500,
+    '& TableBody': {
+      '& TableRow': {
+        '& TableCell': {
+          borderStyle: 'none',
+        },
+      },
+    },
+  },
+  tableRow: {
+    borderStyle: 'none',
+  },
+});
 export default function Article() {
   const classes = useStyles();
 
@@ -37,20 +45,14 @@ export default function Article() {
     <Grid item xs={12} md={12} lg={12}>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="caption table">
-          <TableBody style={{ borderStyle: 'none' }}>
+          <TableBody>
             {rows.map((row) => (
-              <TableRow key={row.name} style={{ borderStyle: 'none' }}>
-                <TableCell
-                  component="th"
-                  scope="row"
-                  style={{ borderStyle: 'none' }}
-                >
+              <TableRow key={row.name}>
+                <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell style={{ borderStyle: 'none' }}>:</TableCell>
-                <TableCell align="left" style={{ borderStyle: 'none' }}>
-                  {row.data}
-                </TableCell>
+                <TableCell>:</TableCell>
+                <TableCell align="left">{row.data}</TableCell>
               </TableRow>
             ))}
             <Button
