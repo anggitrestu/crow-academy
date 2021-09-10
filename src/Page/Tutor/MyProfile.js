@@ -43,10 +43,6 @@ export default function MyProfile() {
       <SidebarDashboard ListItem={ListItem}></SidebarDashboard>
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
-          <br />
-          <br />
-          <br />
-          <h1>Profile Saya</h1>
           <Grid container spacing={3} style={{ marginTop: 20 }}>
             <MyProfileContent></MyProfileContent>
           </Grid>

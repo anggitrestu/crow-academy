@@ -4,7 +4,6 @@ import RegisterPage from './Page/Register/index.js';
 import BerandaTutor from './Page/Tutor/Beranda';
 import MyProfile from './Page/Tutor/MyProfile';
 import Home from './Parts/Home';
-import './index.css';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
