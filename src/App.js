@@ -1,31 +1,35 @@
 import React from 'react';
-import LoginPage from './Page/LandingPage/LoginPage';
-import Register from './Page/Register/RegisterPage';
-import Header from './Parts/Header';
-import Dashboard from './Page/Beranda/Dahsboard';
-import './index.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LoginPage from './Page/LoginPage';
+import RegisterPage from './Page/Register/index.js';
+import BerandaTutorArtikel from './Page/Tutor/BerandaArtikel';
+import BerandaTutorKelas from './Page/Tutor/BerandaKelas';
+import MyProfile from './Page/Tutor/MyProfile';
+import BuatKelas from './Page/Tutor/BuatKelas';
+import KelasSaya from './Page/Tutor/KelasSaya';
+import PostArtikel from './Page/Tutor/PostArtikel';
+import ArtikelSaya from './Page/Tutor/ArtikelSaya';
+import Home from './Parts/Home';
 
-// import 'assets/scss/style.scss';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          <LoginPage />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route path="/header">
-          <Header />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path="/register" component={RegisterPage}></Route>
+      <Route path="/login" component={LoginPage}></Route>
+      <Route path="/tutor/beranda-kelas" component={BerandaTutorKelas}></Route>
+      <Route
+        path="/tutor/beranda-artikel"
+        component={BerandaTutorArtikel}
+      ></Route>
+      <Route path="/tutor/my-profile" component={MyProfile}></Route>
+      <Route path="/tutor/buat-kelas" component={BuatKelas}></Route>
+      <Route path="/tutor/kelas-saya" component={KelasSaya}></Route>
+      <Route path="/tutor/post-artikel" component={PostArtikel}></Route>
+      <Route path="/tutor/artikel-saya" component={ArtikelSaya}></Route>
+      <Redirect from="/tutor" to="/tutor/beranda-kelas" />
+      <Route path="/" component={Home}></Route>
+    </Switch>
   );
 }
 

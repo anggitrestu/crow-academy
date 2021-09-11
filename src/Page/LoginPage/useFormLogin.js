@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const useFormRegister = (validate) => {
+const useFormLogin = (validate) => {
   const [values, setValues] = useState({
     email: '',
     password: '',
-    password2: '',
-    registeras: '',
+    loginas: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -26,4 +25,4 @@ const useFormRegister = (validate) => {
   return { handleChange, values, handleSubmit, errors };
 };
 
-export default useFormRegister;
+export default useFormLogin;
