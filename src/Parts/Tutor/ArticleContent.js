@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     borderStyle: 'none',
   },
 });
-export default function Article() {
+export default function ArticleContent() {
   const classes = useStyles();
 
   return (
@@ -48,11 +48,17 @@ export default function Article() {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
+                <TableCell
+                  component="th"
+                  scope="row"
+                  style={{ borderStyle: 'none' }}
+                >
                   {row.name}
                 </TableCell>
-                <TableCell>:</TableCell>
-                <TableCell align="left">{row.data}</TableCell>
+                <TableCell style={{ borderStyle: 'none' }}>:</TableCell>
+                <TableCell align="left" style={{ borderStyle: 'none' }}>
+                  {row.data}
+                </TableCell>
               </TableRow>
             ))}
             <Button

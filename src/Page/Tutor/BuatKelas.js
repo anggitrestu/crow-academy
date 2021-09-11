@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import { listSideBar } from './listSideBar';
 import Copyright from 'Parts/Copyright';
 import SidebarDashboard from 'Parts/Dashboard/SidebarDashboard';
-import MyProfileContent from 'Parts/Tutor/MyProfileContent';
+import BuatKelasContent from 'Parts/Tutor/BuatKelasContent';
 import { useStyles } from './Stayle';
 
-export default function MyProfile() {
+export default function BuatKelas() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -17,7 +17,7 @@ export default function MyProfile() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3} style={{ marginTop: 20 }}>
             {/* Content */}
-            <MyProfileContent></MyProfileContent>
+            <BuatKelasContent></BuatKelasContent>
             {/* Content */}
           </Grid>
           <Box pt={4}>

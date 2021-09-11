@@ -31,7 +31,7 @@ const rows = [
   ),
 ];
 
-export default function Kelas() {
+export default function KelasContent() {
   const classes = useStyles();
 
   return (
