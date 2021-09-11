@@ -8,7 +8,7 @@ const Breadcrumb = (props) => {
     <Breadcrumbs aria-label="breadcrumb">
       {props.data.map((item, index) => {
         return (
-          <Link to={`${item.pageHref}`}>
+          <Link to={`${item.pageHref}`} key={index}>
             <Links
               key={`${index}`}
               color={

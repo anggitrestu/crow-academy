@@ -11,7 +11,7 @@ const MainListItem = (props) => {
     <div>
       {props.data.map((item, index) => {
         return (
-          <ListItem>
+          <ListItem key={index}>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>

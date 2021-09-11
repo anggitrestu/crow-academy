@@ -1,7 +1,8 @@
 import React from 'react';
 import LoginPage from './Page/LoginPage';
 import RegisterPage from './Page/Register/index.js';
-import BerandaTutor from './Page/Tutor/Beranda';
+import BerandaTutorArtikel from './Page/Tutor/BerandaArtikel';
+import BerandaTutorKelas from './Page/Tutor/BerandaKelas';
 import MyProfile from './Page/Tutor/MyProfile';
 import BuatKelas from './Page/Tutor/BuatKelas';
 import KelasSaya from './Page/Tutor/KelasSaya';
@@ -16,8 +17,11 @@ function App() {
     <Switch>
       <Route path="/register" component={RegisterPage}></Route>
       <Route path="/login" component={LoginPage}></Route>
-      <Route path="/tutor/beranda-kelas" component={BerandaTutor}></Route>
-      <Route path="/tutor/beranda-artikel" component={BerandaTutor}></Route>
+      <Route path="/tutor/beranda-kelas" component={BerandaTutorKelas}></Route>
+      <Route
+        path="/tutor/beranda-artikel"
+        component={BerandaTutorArtikel}
+      ></Route>
       <Route path="/tutor/my-profile" component={MyProfile}></Route>
       <Route path="/tutor/buat-kelas" component={BuatKelas}></Route>
       <Route path="/tutor/kelas-saya" component={KelasSaya}></Route>
